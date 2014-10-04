@@ -1,3 +1,10 @@
+#ifndef PRIORITYQUEUE_H
+#define PRIORITYQUEUE_H
+
+#include <iostream>
+
+using namespace std;
+
 template<typedef T>
 class PriorityQueue
 {
@@ -15,4 +22,7 @@ class PriorityQueue
 	private:
 		T* priorities;
 		const int SIZE;
+		int count;                 // added this in to determine if queue is empty
 };
+
+#endif
