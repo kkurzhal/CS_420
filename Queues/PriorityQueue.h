@@ -5,7 +5,7 @@
 
 using namespace std;
 
-template<typedef T>
+template<typename T>
 class PriorityQueue
 {
 	public:
