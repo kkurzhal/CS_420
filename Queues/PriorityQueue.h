@@ -9,11 +9,13 @@ template<typename T>
 class PriorityQueue
 {
 	public:
-		PriorityQueue<T>(int size);
-		~PriorityQueue<T>();
+		PriorityQueue();
+		PriorityQueue(int size);
+		~PriorityQueue();
 
-		int push(T priority);
-		int pop();
+		//return the number of items in the queue for both functions
+		int push(T priority);	//pushes to index 0
+		int pop();		//pops from index 'n-1' out of 'n' inserted items
 
 		T fetch(int index);
 
@@ -21,7 +23,7 @@ class PriorityQueue
 
 	private:
 		T* priorities;
-		const int SIZE;
+		int SIZE;
 		int count;                 // added this in to determine if queue is empty
 };
 

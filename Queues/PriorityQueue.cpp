@@ -1,6 +1,13 @@
 #include "PriorityQueue.h"
 
 template<typename T>
+PriorityQueue<T>::PriorityQueue()  {
+	SIZE = 20;
+	priorities = new T[SIZE];
+	count = 0;
+}
+
+template<typename T>
 PriorityQueue<T>::PriorityQueue(int size)  {
 		SIZE = size;
 		priorities = new T[SIZE];
@@ -15,13 +22,18 @@ PriorityQueue<T>::~PriorityQueue()  {
 
 template<typename T>
 int PriorityQueue<T>::push(T priority)  {
-	for (int i = 0; i < SIZE; i++)  {
-		if(i+1 != SIZE)  {
-			priorities[i+1] = priorities[i];
+	if(count < SIZE)	//added check for if the queue is full
+	{
+		for (int i = 0; i < SIZE; i++)  {
+			if(i+1 != SIZE)  {
+				priorities[i+1] = priorities[i];
+			}
 		}
+		priorities[0] = priority; 
+		count++;
 	}
-	priorities[0] = priority; 
-	count++;
+	else
+		return count;
 }
 
 template<typename T>
@@ -43,14 +55,14 @@ bool PriorityQueue<T>::isEmpty()  {
 template<typename T>
 int PriorityQueue<T>::pop()  {
 	if(isEmpty())  {
-		cout << "Cannot pop item from empty queue!" << endl;
+		return 0;
+	
+		//return the number of items in the queue instead of printing
+		//cout << "Cannot pop item from empty queue!" << endl;
 	}
 	else  {
-		priorities[count-1] = NULL;
-		/*for(int i = 0; i < SIZE; i++)  {
-			priorities[i] = priorities[i+1];
-		}*/
-		count--;
+		//priorities[count-1] = NULL;	//cannot do this for specific types; maybe a more generic way?		
+		return --count;
 	}
 }
 
