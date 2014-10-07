@@ -14,10 +14,13 @@ class PriorityQueue
 		~PriorityQueue();
 
 		//return the number of items in the queue for both functions
-		int push(T priority);	//pushes to index 0
-		int pop();		//pops from index 'n-1' out of 'n' inserted items
+		int enqueue(T priority);	//pushes to index 0
+		int dequeue();		//pops from index 'n-1' out of 'n' inserted items
 
-		T fetch(int index);
+		T get(int index);
+
+		T getHead();
+		T getTail();
 
 		bool isEmpty();
 

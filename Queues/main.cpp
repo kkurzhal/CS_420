@@ -5,9 +5,9 @@ int main()  {
 	
 
 	// push a few random int's
-	testQueue->push(4);
-	testQueue->push(7);
-	testQueue->push(1);
+	testQueue->enqueue(4);
+	testQueue->enqueue(7);
+	testQueue->enqueue(1);
 	
 	// queue shouldn't be empty; check this
 	if(testQueue->isEmpty())  {
@@ -15,10 +15,10 @@ int main()  {
 	}
 	
 	// pop items (more items than were pushed)
-	cout << testQueue->pop() << endl;
-	cout << testQueue->pop() << endl;
-	cout << testQueue->pop() << endl;
-	cout << testQueue->pop() << endl;
+	cout << testQueue->dequeue() << endl;
+	cout << testQueue->dequeue() << endl;
+	cout << testQueue->dequeue() << endl;
+	cout << testQueue->dequeue() << endl;
 	
 	// should be empty now; check this
 	if(testQueue->isEmpty())  {

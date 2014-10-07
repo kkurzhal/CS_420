@@ -21,7 +21,7 @@ PriorityQueue<T>::~PriorityQueue()  {
 }
 
 template<typename T>
-int PriorityQueue<T>::push(T priority)  {
+int PriorityQueue<T>::enqueue(T priority)  {
 	if(count < SIZE)	//added check for if the queue is full
 	{
 		for (int i = 0; i < SIZE; i++)  {
@@ -53,7 +53,7 @@ bool PriorityQueue<T>::isEmpty()  {
 }
 
 template<typename T>
-int PriorityQueue<T>::pop()  {
+int PriorityQueue<T>::dequeue()  {
 	if(isEmpty())  {
 		return 0;
 	
@@ -67,9 +67,18 @@ int PriorityQueue<T>::pop()  {
 }
 
 template<typename T>
-T PriorityQueue<T>::fetch(int index)  {
+T PriorityQueue<T>::get(int index)  {
 	return priorities[index];
 } 
 
+template<typename T>
+T PriorityQueue<T>::getTail()
+{
+	return priorities[count-1];
+}
 
-
+template<typename T>
+T PriorityQueue<T>::getHead()
+{
+	return priorities[0];
+}
