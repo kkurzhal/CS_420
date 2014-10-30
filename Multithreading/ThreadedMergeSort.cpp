@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define SIZE 11 //11
+#define SIZE 16 //11
 
 // Struct to keep track of bounds on halves of array.
 typedef struct Data {
@@ -22,7 +22,8 @@ int main()  {
 
 	// Initialize unsorted array.
 //	int array[SIZE] = {11, 9, 35}; //, 3, 47, 54, 63, 88, 17, 1, 74};
-	int *array = new int[SIZE] {11,9,35,3, 47, 54, 63, 88, 17, 1, 74};
+//	int *array = new int[SIZE] {11,9,35,3, 47, 54, 63, 88, 17, 1, 74};
+	int array[] = {11,9,35,-148, 3, 47, -50, 54, 0, 80001, 63, 88, 17, 1, 74, 10000};
 
 	cout << "UNSORTED ARRAY" << endl;
 	
@@ -59,8 +60,9 @@ int main()  {
 		
 	cout << endl;
 
-	delete [] array;
-	array = NULL;
+//	delete [] array;
+//	array = NULL;
+	data->list = NULL;
 	delete data;	
 
 	return 0;
@@ -164,11 +166,11 @@ void *split(void *a) {
 		}
 		cout << endl << endl;
 	}
-
+/*
 	data->list = NULL;
 	delete data;
 	data = NULL;
-
+*/
 	cout << "COMPLETED!!!" << endl;
 	pthread_exit(NULL);
 }
